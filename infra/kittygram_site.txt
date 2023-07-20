@@ -1,0 +1,5 @@
+IP: 158.160.75.3;
+name_taski: https://14sprint.sytes.net;
+name_kittygram: https://jrushkittygram.sytes.net;
+login: admin;
+password: admin; 
