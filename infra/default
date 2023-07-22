@@ -15,7 +15,6 @@ server {
         try_files $uri /index.html;
     }
     
-
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/14sprint.sytes.net/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/14sprint.sytes.net/privkey.pem; # managed by Certbot
@@ -23,19 +22,6 @@ server {
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
-server {
-    if ($host = 14sprint.sytes.net) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-    listen 80;
-    server_name 158.160.75.3 14sprint.sytes.net;
-    return 404; # managed by Certbot
-
-
-}
-
 
 server {
     server_name jrushkittygram.sytes.net;
@@ -55,7 +41,6 @@ server {
         index  index.html index.htm;
         try_files $uri /index.html;
     }
-    
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/jrushkittygram.sytes.net/fullchain.pem; # managed by Certbot
@@ -72,5 +57,13 @@ server {
 
     server_name jrushkittygram.sytes.net;
     listen 80;
+    return 404; # managed by Certbot
+    
+    if ($host = 14sprint.sytes.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name 158.160.75.3 14sprint.sytes.net;
     return 404; # managed by Certbot
 }
