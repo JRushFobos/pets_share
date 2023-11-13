@@ -36,7 +36,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'kittygram_backend.urls'
+ROOT_URLCONF = 'petsshare_backend.urls'
 
 TEMPLATES = [
     {
@@ -54,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
+WSGI_APPLICATION = 'petsshare_backend.wsgi.application'
 
 
 DATABASES = {
@@ -99,7 +99,7 @@ STATIC_URL = '/static_backend/'
 STATIC_ROOT = BASE_DIR / 'static_backend'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/kittygram/media/'
+MEDIA_ROOT = '/var/www/petsshare/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

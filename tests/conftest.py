@@ -8,8 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 BACKEND_DIR_NAME = 'backend'
 FRONTEND_DIR_NAME = 'frontend'
 INFRA_DIR_NAME = 'infra'
-DEPLOY_INFO_FILE_NAME = 'kittygram_site.txt'
-KITTYGRAM_LINK_KEY = 'name_kittygram'
+DEPLOY_INFO_FILE_NAME = 'petsshare_site.txt'
+petsshare_LINK_KEY = 'name_petsshare'
 TASKI_LINK_KEY = 'name_taski'
 
 for dir_name in (BACKEND_DIR_NAME, FRONTEND_DIR_NAME, INFRA_DIR_NAME):
@@ -28,7 +28,7 @@ def infra_dir_info():
 
 @pytest.fixture(scope='session')
 def expected_infra_files():
-    return {DEPLOY_INFO_FILE_NAME, 'default', 'gunicorn_kittygram.service'}
+    return {DEPLOY_INFO_FILE_NAME, 'default', 'gunicorn_petsshare.service'}
 
 
 @pytest.fixture(scope='session')
@@ -68,12 +68,12 @@ def expected_deploy_info_file_content():
     return {
         'IP': 'IP-адрес сервера',
         TASKI_LINK_KEY: 'ссылка для доступа к проекту `Taski`',
-        KITTYGRAM_LINK_KEY: 'ссылка для доступа к проекту Kittygram',
+        petsshare_LINK_KEY: 'ссылка для доступа к проекту petsshare',
         'login': 'логин',
         'password': 'пароль'
     }
 
 
-@pytest.fixture(params=(TASKI_LINK_KEY, KITTYGRAM_LINK_KEY))
+@pytest.fixture(params=(TASKI_LINK_KEY, petsshare_LINK_KEY))
 def link_key(request):
     return request.param

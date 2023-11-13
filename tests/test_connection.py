@@ -49,12 +49,12 @@ def test_link_connection(
         f'Убедитесь, что GET-запрос к `{link}` возвращает ответ со статусом '
         f'{int(expected_status)}.'
     )
-    cats_project_name = 'Kittygram'
+    cats_project_name = 'petsshare'
     assert_msg_template = (
         f'Убедитесь, что по ссылке `{link}` доступен проект '
         '`{project_name}`.'
     )
-    if link_key == 'name_kittygram':
+    if link_key == 'name_petsshare':
         assert cats_project_name in response.text, (
             assert_msg_template.format(project_name=cats_project_name)
         )
